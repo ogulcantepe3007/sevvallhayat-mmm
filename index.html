@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Şevval | Hayatımın Anlamı ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #421b29 0%, #180b11 45%, #090509 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------------- LOGIN ---------------- */
+
+#loginScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(rgba(10,3,8,.78), rgba(10,3,8,.95)),
+        radial-gradient(circle at center, #63253c, #10070c);
+    padding: 20px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 430px;
+    padding: 45px 30px;
+    text-align: center;
+    border-radius: 25px;
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.15);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 25px 80px rgba(0,0,0,.55);
+}
+
+.login-heart {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.login-box h1 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.login-box p {
+    color: #e5cbd3;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+.password-input {
+    width: 100%;
+    padding: 15px 18px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,.12);
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.password-input::placeholder {
+    color: #c9aeb7;
+    letter-spacing: 1px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #b52d5a, #7e183c);
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(181,45,90,.35);
+}
+
+#errorMessage {
+    color: #ff7e9f;
+    margin-top: 15px;
+    display: none;
+}
+
+/* ---------------- MAIN ---------------- */
+
+#mainContent {
+    display: none;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(183,45,90,.3), transparent 45%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.small-title {
+    color: #d99aaa;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 9vw, 100px);
+    line-height: .95;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #fff, #f5a9bb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero h2 {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: normal;
+    color: #efc7d2;
+}
+
+.hero-heart {
+    font-size: 55px;
+    margin-top: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.scroll-down {
+    margin-top: 55px;
+    color: #bfa0aa;
+    font-size: 14px;
+}
+
+/* ---------------- SECTIONS ---------------- */
+
+section {
+    padding: 100px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #c9aeb7;
+    max-width: 700px;
+    margin: 0 auto 55px;
+    line-height: 1.8;
+}
+
+/* ---------------- LETTER ---------------- */
+
+.letter {
+    max-width: 850px;
+    margin: auto;
+    padding: 50px;
+    border-radius: 25px;
+    background:
+        linear-gradient(145deg,
+        rgba(255,255,255,.09),
+        rgba(255,255,255,.035));
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 30px 80px rgba(0,0,0,.3);
+    position: relative;
+}
+
+.letter::before {
+    content: "“";
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    font-size: 130px;
+    color: rgba(220,100,130,.18);
+}
+
+.letter p {
+    font-size: 18px;
+    line-height: 2;
+    color: #f4e4e8;
+    white-space: pre-line;
+}
+
+.signature {
+    margin-top: 35px;
+    text-align: right;
+    font-size: 22px;
+    color: #ef9fb2;
+}
+
+/* ---------------- LOVE CARDS ---------------- */
+
+.love-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.love-card {
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .35s;
+}
+
+.love-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,.09);
+}
+
+.love-icon {
+    font-size: 42px;
+    margin-bottom: 18px;
+}
+
+.love-card h3 {
+    margin-bottom: 10px;
+}
+
+.love-card p {
+    color: #cdb5bd;
+    line-height: 1.6;
+}
+
+/* ---------------- TIMELINE ---------------- */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#8d2749, transparent);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    width: 50%;
+    padding: 20px 35px;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 30px;
+    width: 15px;
+    height: 15px;
+    background: #d85079;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #d85079;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -7px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7px;
+}
+
+.timeline-card {
+    padding: 25px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+}
+
+.timeline-card h3 {
+    color: #ef9fb2;
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    color: #d2bcc3;
+    line-height: 1.6;
+}
+
+/* ---------------- GALLERY ---------------- */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.photo {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+    background: rgba(255,255,255,.06);
+    border: 1px solid rgba(255,255,255,.08);
+    transition: .35s;
+}
+
+.photo:hover {
+    transform: scale(1.025);
+    box-shadow: 0 15px 40px rgba(0,0,0,.45);
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------------- MODAL ---------------- */
+
+#photoModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0,0,0,.93);
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.modal-image {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 70px rgba(0,0,0,.7);
+}
+
+.close-modal {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 45px;
+    color: white;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.modal-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,.12);
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.modal-arrow:hover {
+    background: rgba(255,255,255,.25);
+}
+
+.prev {
+    left: 25px;
+}
+
+.next {
+    right: 25px;
+}
+
+.photo-counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ddd;
+}
+
+/* ---------------- FINAL ---------------- */
+
+.final-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.final-box {
+    max-width: 800px;
+}
+
+.final-box h2 {
+    font-size: clamp(35px, 7vw, 65px);
+    margin-bottom: 25px;
+}
+
+.final-box p {
+    font-size: 21px;
+    color: #d7bec6;
+    line-height: 1.8;
+}
+
+.final-heart {
+    font-size: 65px;
+    margin-top: 30px;
+    animation: heartbeat 1.5s infinite;
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    color: #856e76;
+    font-size: 13px;
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.1);
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 800px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .love-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+
+    .letter p {
+        font-size: 16px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 3px;
+        right: auto;
+    }
+
+    .modal-arrow {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+    }
+
+    .prev {
+        left: 10px;
+    }
+
+    .next {
+        right: 10px;
+    }
+
+    .close-modal {
+        right: 15px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .love-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     ŞİFRE EKRANI
+     ŞİFRE: 090826
+========================================================= -->
+
+<div id="loginScreen">
+
+    <div class="login-box">
+
+        <div class="login-heart">❤️</div>
+
+        <h1>Şevval</h1>
+
+        <p>
+            Burası sadece sana ait...
+            <br>
+            Küçük bir şey hazırladım.
+        </p>
+
+        <input
+            type="password"
+            id="password"
+            class="password-input"
+            placeholder="Şifre"
+            maxlength="6"
+            onkeydown="if(event.key === 'Enter') checkPassword()"
+        >
+
+        <button class="login-button" onclick="checkPassword()">
+            İçeri Gir ❤️
+        </button>
+
+        <div id="errorMessage">
+            Şifre yanlış ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ANA SİTE
+========================================================= -->
+
+<div id="mainContent">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Sana söylemek istediğim birkaç şey var...
+            </div>
+
+            <h1>Şevval</h1>
+
+            <h2>Hayatımın Anlamı ❤️</h2>
+
+            <div class="hero-heart">
+                ❤️
+            </div>
+
+            <div class="scroll-down">
+                Aşağı kaydır...
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEKTUP -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Sana Bir Mektup 💌
+            </h2>
+
+            <p class="section-subtitle">
+                İçimde kalanları sana anlatmak istedim.
+            </p>
+
+            <div class="letter">
+
+                <p>Şevval,
+
+Ben sensiz yapamıyorum… Daha sadece 2 gün oldu ama 2 gündür sana yazmamak için kendimi zor tutuyorum.
+
+Dün seni gördüm; yanına gelmemek, seninle konuşmamak için gerçekten çok zor durdum. Bir köşeye çekilip hiçbir şey yapmamak, senden uzak durmak o kadar zoruma gidiyor ki…
+
+Sürekli seni düşünüyorum. Kendimi boşlukta hissediyorum.
+
+Ben seninle mutlu olmayı, sevmeyi ve sevilmeyi öğrendim. Sen hayatımda öyle büyük bir yer edindin ki sensiz kendimi eksik hissediyorum.
+
+Bu 2 günde senin değerini ve kıymetini çok daha iyi anladım. Keşke bazı şeyleri daha önce bu kadar net görebilseydim.
+
+Ben senin için her şeyi yapmaya hazırım. Senden tek istediğim bana bir şans daha vermen.
+
+Ne olur beni affet…
+
+Seni çok ama çok seviyorum. ❤️❤️</p>
+
+                <div class="signature">
+                    Seni seven biri... ❤️
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEDEN SEVİYORUM -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Seni Neden Seviyorum? ❤️
+            </h2>
+
+            <p class="section-subtitle">
+                Aslında bunun tek bir cevabı yok...
+            </p>
+
+            <div class="love-grid">
+
+                <div class="love-card">
+                    <div class="love-icon">😊</div>
+                    <h3>Gülüşün</h3>
+                    <p>
+                        Sen gülümsediğinde, dünyadaki bütün güzellikler anlamını yitiriyor
+                    </p>
+                </div>
+
+                <div class="love-card">
+                    <div class="love-icon">❤️</div>
+                    <h3>Bana Bakışın</h3>
+                    <p>
+                        bana öyle güzel baktığında bütün gardımı indiriyorum
+                        kendimi dünyanın en şanslı
+                        insanı gibi hissediyorum.
+                    </p>
+                </div>
+
+                <div class="love-card">
+                    <div class="love-icon">🤍</div>
+                    <h3>Yanımda Oluşun</h3>
+                    <p>
+                        sen yanımdayken huzur doluyorum mutlu olmam için
+                        Sadece seninle
+                        olmak yetiyor.
+                    </p>
+                </div>
+
+                <div class="love-card">
+                    <div class="love-icon">🌹</div>
+                    <h3>Sen Olduğun İçin</h3>
+                    <p>
+                        Seni sevmek için bir sebebe
+                        ihtiyacım yok. Çünkü sen,
+                        sensin.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HİKAYE -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Bizim Hikâyemiz 🕰️
+            </h2>
+
+            <p class="section-subtitle">
+                Birlikte yaşadığımız güzel anlardan bazıları...
+            </p>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+
+                        <h3>İlk Tanıştığımız Gün</h3>
+
+                        <p>
+                            Belki o gün bunun hayatımın
+                            en güzel başlangıçlarından biri
+                            olacağını bilmiyordum.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+
+                        <h3>Birlikte Geçirdiğimiz Anlar</h3>
+
+                        <p>
+                            Birlikte güldüğümüz,
+                            konuştuğumuz ve sadece
+                            birbirimizin yanında olduğumuz
+                            zamanlar...
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+
+                        <h3>Güzel Hatıralarımız</h3>
+
+                        <p>
+                            Fotoğraflara baktıkça
+                            ne kadar güzel anılar
+                            biriktirdiğimizi hatırlıyorum.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <div class="timeline-dot"></div>
+
+                    <div class="timeline-card">
+
+                        <h3>Şimdi</h3>
+
+                        <p>
+                            Tek istediğim yeni güzel
+                            anılarımızın olması...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOTOĞRAF GALERİSİ
+
+         FOTOĞRAFLARINI ŞU ŞEKİLDE KOY:
+
+         photos/
+         ├── foto1.jpeg
+         ├── foto2.jpeg
+         ...
+         └── foto15.jpeg
+
+         Fotoğraf sayısını artırmak istersen aşağıdaki
+         yapıya yeni fotoğraf ekleyebilirsin.
+    ====================================================== -->
+
+    <section>
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Bizden Kareler 📸
+            </h2>
+
+            <p class="section-subtitle">
+                Birlikte geçirdiğimiz güzel anlar...
+            </p>
+
+
+            <div class="gallery">
+
+                <div class="photo" onclick="openPhoto(0)">
+                    <img src="foto1.jpeg" alt="Anımız 1">
+                </div>
+
+                <div class="photo" onclick="openPhoto(1)">
+                    <img src="foto2.jpeg" alt="Anımız 2">
+                </div>
+
+                <div class="photo" onclick="openPhoto(2)">
+                    <img src="foto3.jpeg" alt="Anımız 3">
+                </div>
+
+                <div class="photo" onclick="openPhoto(3)">
+                    <img src="foto4.jpeg" alt="Anımız 4">
+                </div>
+
+                <div class="photo" onclick="openPhoto(4)">
+                    <img src="foto5.jpeg" alt="Anımız 5">
+                </div>
+
+                <div class="photo" onclick="openPhoto(5)">
+                    <img src="foto6.jpeg" alt="Anımız 6">
+                </div>
+
+                <div class="photo" onclick="openPhoto(6)">
+                    <img src="foto7.jpeg" alt="Anımız 7">
+                </div>
+
+                <div class="photo" onclick="openPhoto(7)">
+                    <img src="foto8.jpeg" alt="Anımız 8">
+                </div>
+
+                <div class="photo" onclick="openPhoto(8)">
+                    <img src="foto9.jpeg" alt="Anımız 9">
+                </div>
+
+                <div class="photo" onclick="openPhoto(9)">
+                    <img src="foto10.jpeg" alt="Anımız 10">
+                </div>
+
+                <div class="photo" onclick="openPhoto(10)">
+                    <img src="foto11.jpeg" alt="Anımız 11">
+                </div>
+
+                <div class="photo" onclick="openPhoto(11)">
+                    <img src="foto12.jpeg" alt="Anımız 12">
+                </div>
+
+                <div class="photo" onclick="openPhoto(12)">
+                    <img src="foto13.jpeg" alt="Anımız 13">
+                </div>
+
+                <div class="photo" onclick="openPhoto(13)">
+                    <img src="foto14.jpeg" alt="Anımız 14">
+                </div>
+
+                <div class="photo" onclick="openPhoto(14)">
+                    <img src="foto15.jpeg" alt="Anımız 15">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final-section">
+
+        <div class="final-box">
+
+            <h2>
+                Bana Bir Şans Daha
+                Verir misin, Şevval?
+            </h2>
+
+            <p>
+                Geçmişte yaptığım hataları değiştiremem.
+                Ama bundan sonrasını değiştirmek için
+                elimden gelen her şeyi yapabilirim.
+                <br><br>
+                Tek istediğim yeniden seninle
+                güzel günler yaşayabilmek.
+            </p>
+
+            <div class="final-heart">
+                ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Şevval için, kalbimden... ❤️
+    </footer>
+
+</div>
+
+
+<!-- =====================================================
+     FOTOĞRAF MODALI
+===================================================== -->
+
+<div id="photoModal">
+
+    <span class="close-modal" onclick="closePhoto()">
+        &times;
+    </span>
+
+    <button class="modal-arrow prev" onclick="previousPhoto()">
+        ‹
+    </button>
+
+    <img
+        id="modalImage"
+        class="modal-image"
+        src=""
+        alt="Fotoğraf"
+    >
+
+    <button class="modal-arrow next" onclick="nextPhoto()">
+        ›
+    </button>
+
+    <div id="photoCounter" class="photo-counter">
+        1 / 15
+    </div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   ŞİFRE
+===================================================== */
+
+const correctPassword = "090826";
+
+function checkPassword() {
+
+    const password =
+        document.getElementById("password").value;
+
+    const error =
+        document.getElementById("errorMessage");
+
+    if (password === correctPassword) {
+
+        document.getElementById("loginScreen").style.display = "none";
+
+        document.getElementById("mainContent").style.display = "block";
+
+        document.body.style.overflow = "auto";
+
+    } else {
+
+        error.style.display = "block";
+
+        document.getElementById("password").value = "";
+
+        setTimeout(() => {
+            error.style.display = "none";
+        }, 2500);
+    }
+}
+
+
+/* =====================================================
+   FOTOĞRAFLAR
+===================================================== */
+
+const photos = [
+
+    "photos/foto1.jpeg",
+    "photos/foto2.jpeg",
+    "photos/foto3.jpeg",
+    "photos/foto4.jpeg",
+    "photos/foto5.jpeg",
+    "photos/foto6.jpeg",
+    "photos/foto7.jpeg",
+    "photos/foto8.jpeg",
+    "photos/foto9.jpeg",
+    "photos/foto10.jpeg",
+    "photos/foto11.jpeg",
+    "photos/foto12.jpeg",
+    "photos/foto13.jpeg",
+    "photos/foto14.jpeg",
+    "photos/foto15.jpeg"
+
+];
+
+let currentPhoto = 0;
+
+
+/* =====================================================
+   FOTOĞRAF AÇ
+===================================================== */
+
+function openPhoto(index) {
+
+    currentPhoto = index;
+
+    const modal =
+        document.getElementById("photoModal");
+
+    const image =
+        document.getElementById("modalImage");
+
+    const counter =
+        document.getElementById("photoCounter");
+
+    image.src = photos[currentPhoto];
+
+    counter.textContent =
+        (currentPhoto + 1) + " / " + photos.length;
+
+    modal.style.display = "flex";
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* =====================================================
+   FOTOĞRAF KAPAT
+===================================================== */
+
+function closePhoto() {
+
+    document.getElementById("photoModal").style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+
+/* =====================================================
+   ÖNCEKİ FOTOĞRAF
+===================================================== */
+
+function previousPhoto() {
+
+    currentPhoto--;
+
+    if (currentPhoto < 0) {
+        currentPhoto = photos.length - 1;
+    }
+
+    updatePhoto();
+}
+
+
+/* =====================================================
+   SONRAKİ FOTOĞRAF
+===================================================== */
+
+function nextPhoto() {
+
+    currentPhoto++;
+
+    if (currentPhoto >= photos.length) {
+        currentPhoto = 0;
+    }
+
+    updatePhoto();
+}
+
+
+/* =====================================================
+   FOTOĞRAF GÜNCELLE
+===================================================== */
+
+function updatePhoto() {
+
+    document.getElementById("modalImage").src =
+        photos[currentPhoto];
+
+    document.getElementById("photoCounter").textContent =
+        (currentPhoto + 1) + " / " + photos.length;
+}
+
+
+/* =====================================================
+   KLAVYE KONTROLLERİ
+===================================================== */
+
+document.addEventListener("keydown", function(event) {
+
+    const modal =
+        document.getElementById("photoModal");
+
+    if (modal.style.display !== "flex") {
+        return;
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPhoto();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextPhoto();
+    }
+
+    if (event.key === "Escape") {
+        closePhoto();
+    }
+
+});
+
+
+/* =====================================================
+   MODAL DIŞINA TIKLAYINCA KAPAT
+===================================================== */
+
+document.getElementById("photoModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            closePhoto();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
